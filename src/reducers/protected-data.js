@@ -1,23 +1,22 @@
 import {
     FETCH_PROTECTED_DATA_SUCCESS,
-    FETCH_PROTECTED_DATA_ERROR
+    FETCH_PROTECTED_DATA_ERROR,
+    FETCH_PROTECTED_DATA_REQUEST
 } from '../actions/protected-data';
 
 const initialState = {
     data: '',
-    error: null
+    error: null,
+    loading: false,
 };
 
 export default function reducer(state = initialState, action) {
-    if (action.type === FETCH_PROTECTED_DATA_SUCCESS) {
-        return Object.assign({}, state, {
-            data: action.data,
-            error: null
-        });
-    } else if (action.type === FETCH_PROTECTED_DATA_ERROR) {
-        return Object.assign({}, state, {
-            error: action.error
-        });
-    }
-    return state;
+  switch(action.type) {
+    case FETCH_PROTECTED_DATA_REQUEST:
+      return { ...state, loading: true, error: null }
+    case FETCH_PROTECTED_DATA_ERROR:
+      return { ...state, loading: false, error: action.error }
+    case FETCH_PROTECTED_DATA_SUCCESS:
+      return { ...state, loading: false, data: action.data }
+  }
 }
