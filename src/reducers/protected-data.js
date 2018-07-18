@@ -18,5 +18,7 @@ export default function reducer(state = initialState, action) {
       return { ...state, loading: false, error: action.error }
     case FETCH_PROTECTED_DATA_SUCCESS:
       return { ...state, loading: false, data: action.data }
+    default:
+      return state
   }
 }
