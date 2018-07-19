@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {clearAuth} from '../actions/auth';
+import {clearAuthToken} from '../local-storage';
 
-export default class Nav extends Component {
+export class Nav extends React.Component {
+  logOut() {
+    this.props.dispatch(clearAuth());
+    clearAuthToken();
+  }
+
   constructor() {
     super();
     
@@ -33,11 +41,18 @@ export default class Nav extends Component {
   }
 
   render() {
+    let logOutButton;
+    if (this.props.loggedIn) {
+        logOutButton = (
+            <button onClick={() => this.logOut()}>Log out</button>
+        );
+    }
+    
     return (
       <div>
-        <button onClick={this.showMenu}>
+        <div onClick={this.showMenu}>
           Show menu
-        </button>
+        </div>
         
         {
           this.state.showMenu
@@ -48,13 +63,13 @@ export default class Nav extends Component {
                   this.dropdownMenu = element;
                 }}
               >
-                <button> Menu item 1 </button>
-                <button> <Link to="/">Login</Link> </button>
-                <button> Menu item 3 </button>
+                <div> {logOutButton} </div>
+                <div> <Link to="/">Dashboard</Link> </div>
+                <div> <Link to="/leaderboard">Leaderboard</Link> </div>
               </div>
             )
             : (
-              null
+              null                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
             )
         }
       </div>
@@ -62,3 +77,10 @@ export default class Nav extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  loggedIn: state.auth.currentUser !== null,
+
+});
+
+
+export default connect(mapStateToProps)(Nav);

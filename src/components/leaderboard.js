@@ -7,7 +7,8 @@ import LoginForm from './login-form';
 export function Leaderboard(props) {
 
     if (!props.loggedIn) {
-        return <Redirect to="/login" />;
+        console.log("go to login page")
+        // return <Redirect to="/" />;
     }
 
     return (

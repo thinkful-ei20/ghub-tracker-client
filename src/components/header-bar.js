@@ -22,7 +22,7 @@ export class HeaderBar extends React.Component {
             <div className="header-bar">
                 <h1>Foo App</h1>
                 <Nav />
-                {logOutButton}
+                {/* {logOutButton} */}
             </div>
         )
     }
