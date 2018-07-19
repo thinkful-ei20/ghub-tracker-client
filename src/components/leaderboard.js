@@ -1,25 +1,33 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
 
-import LoginForm from './login-form';
-
-export function Leaderboard(props) {
-
-    if (!props.loggedIn) {
-        console.log("go to login page")
-        // return <Redirect to="/" />;
-    }
-
-    return (
-        <div className="leaderboard">
-            <h2>Leaderboard</h2>
-        </div>
-    );
+export function Leaderboard({ data }) {
+  let leaders
+  if (data) {
+    leaders = data.map(data => {
+      return (
+        <tr>
+        <td>{data.rank}</td>
+        <td>{data.username}</td>
+        <td>{data.commits}</td>
+        </tr>
+      )
+    })
+  }
+  return (
+    <div className="leaderboard">
+      <h2>Leaderboard</h2>
+      <table>
+        <thead>
+          <th>Rank</th>
+          <th>Username</th>
+          <th>Commits</th>
+        </thead>
+        <tbody>
+          { leaders }
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
-const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
-});
-
-export default connect(mapStateToProps)(Leaderboard);
+export default Leaderboard
