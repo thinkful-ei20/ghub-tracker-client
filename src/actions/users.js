@@ -29,3 +29,10 @@ export const registerUser = user => dispatch => {
       }
     });
 };
+
+export const getPublicProfile = username => dispatch => {
+  return fetch(`${API_BASE_URL}/users/${username}`)
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .catch(err => err)
+}
