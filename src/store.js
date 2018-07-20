@@ -8,12 +8,14 @@ import { loadAuthToken } from './local-storage';
 import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
 import { setAuthToken, refreshAuthToken } from './actions/auth';
+import leaderboardsReducer from './reducers/leaderboards'
 
 const store = createStore(
 	combineReducers({
 		form: formReducer,
 		auth: authReducer,
-		protectedData: protectedDataReducer
+    protectedData: protectedDataReducer,
+    leaderboards: leaderboardsReducer,
 	}),
 	composeWithDevTools(applyMiddleware(thunk))
 );
