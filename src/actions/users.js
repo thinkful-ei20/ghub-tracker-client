@@ -36,3 +36,15 @@ export const getPublicProfile = username => dispatch => {
     .then(res => res.json())
     .catch(err => err)
 }
+
+export const sendFriendRequest = receivingUser => (dispatch, getState) => {
+  const authToken = getState().auth.authToken
+  return fetch(`${API_BASE_URL}/users/addFriend/${receivingUser}`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${authToken}`
+    }
+  })
+    .then(res => normalizeResponseErrors(res))
+    .catch(err => err)
+}
