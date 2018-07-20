@@ -54,7 +54,7 @@ export const acceptRequest = sendingUser => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/users/acceptFriend/${sendingUser}`, {
     method: 'GET',
     headers: {
-      'Authorization': `Bearer ${authtoken}`
+      'Authorization': `Bearer ${authToken}`
     }
   })
     .then(res => normalizeResponseErrors(res))

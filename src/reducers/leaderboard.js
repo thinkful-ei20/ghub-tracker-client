@@ -2,7 +2,7 @@ import {
   GET_PUBLIC_LEADERBOARD_REQUEST,
   GET_PUBLIC_LEADERBOARD_SUCCESS,
   GET_PUBLIC_LEADERBOARD_ERROR
-} from '../actions/leaderboards'
+} from '../actions/leaderboard'
 
 const initialState = {
   loading: false,
