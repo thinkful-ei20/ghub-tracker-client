@@ -4,7 +4,7 @@ export const Details = ({commits}) => {
   let detailList;
   if(commits) {
     detailList = Object.keys(commits).map(function(key, index) {
-      return <li>{key}: {commits[key]}</li>;
+      return <li key={index}>{key}: {commits[key]}</li>;
    });
     
   }
