@@ -1,14 +1,11 @@
 import React from 'react';
 
-export const Details = (commits) => {
+export const Details = ({commits}) => {
   let detailList;
   if(commits) {
-    for(let key in commits) {
-      if (commits.hasOwnProperty(key)) {
-        detailList = <li>{commits[key]}</li>
-        return detailList
-      } 
-    }
+    detailList = Object.keys(commits).map(function(key, index) {
+      return <li>{key}: {commits[key]}</li>;
+   });
     
   }
 

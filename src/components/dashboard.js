@@ -2,8 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
-import Leaderboard from './leaderboard';
-import Challenges from './current-challenges';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
@@ -22,8 +20,6 @@ export class Dashboard extends React.Component {
         <div className="dashboard-protected-data">
           Protected data: {this.props.protectedData}
         </div>
-        <Leaderboard />
-        <Challenges />
       </div>
     );
   }
