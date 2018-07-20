@@ -30,7 +30,7 @@ export const registerUser = user => dispatch => {
     });
 };
 
-export const getPublicProfile = username => dispatch => {
+export const getPublicProfile = username => () => {
   return fetch(`${API_BASE_URL}/users/${username}`)
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
@@ -43,6 +43,18 @@ export const sendFriendRequest = receivingUser => (dispatch, getState) => {
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${authToken}`
+    }
+  })
+    .then(res => normalizeResponseErrors(res))
+    .catch(err => err)
+}
+
+export const acceptRequest = sendingUser => (dispatch, getState) => {
+  const authToken = getState().auth.authToken
+  return fetch(`${API_BASE_URL}/users/acceptFriend/${sendingUser}`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${authtoken}`
     }
   })
     .then(res => normalizeResponseErrors(res))
