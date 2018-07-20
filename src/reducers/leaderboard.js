@@ -1,7 +1,7 @@
 import {
-  GET_PUBLIC_LEADERBOARD_DATA_REQUEST,
-  GET_PUBLIC_LEADERBOARD_DATA_SUCCESS,
-  GET_PUBLIC_LEADERBOARD_DATA_ERROR
+  GET_PUBLIC_LEADERBOARD_REQUEST,
+  GET_PUBLIC_LEADERBOARD_SUCCESS,
+  GET_PUBLIC_LEADERBOARD_ERROR
 } from '../actions/leaderboards'
 
 const initialState = {
@@ -12,11 +12,11 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case GET_PUBLIC_LEADERBOARD_DATA_REQUEST:
+    case GET_PUBLIC_LEADERBOARD_REQUEST:
       return { ...state, loading: true, error: null }
-    case GET_PUBLIC_LEADERBOARD_DATA_SUCCESS:
+    case GET_PUBLIC_LEADERBOARD_SUCCESS:
       return { ...state, loading: false, leaderboard: action.leaderboard }
-    case GET_PUBLIC_LEADERBOARD_DATA_ERROR:
+    case GET_PUBLIC_LEADERBOARD_ERROR:
       return { ...state, loading: false, error: action.error }
     default:
       return state
