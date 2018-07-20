@@ -7,7 +7,7 @@ import {
 const initialState = {
   loading: false,
   error: null,
-  data: null
+  leaderboard: null
 }
 
 export default (state = initialState, action) => {
@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
     case GET_PUBLIC_LEADERBOARD_DATA_REQUEST:
       return { ...state, loading: true, error: null }
     case GET_PUBLIC_LEADERBOARD_DATA_SUCCESS:
-      return { ...state, loading: false, data: action.data }
+      return { ...state, loading: false, leaderboard: action.leaderboard }
     case GET_PUBLIC_LEADERBOARD_DATA_ERROR:
       return { ...state, loading: false, error: action.error }
     default:
