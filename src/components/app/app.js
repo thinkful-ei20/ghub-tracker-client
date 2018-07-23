@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 
 import Header from '../header/header';
+import Footer from '../footer/footer';
 import LandingPage from '../landing-page';
 import Dashboard from '../dashboard';
 import RegistrationPage from '../registration-page';
@@ -51,6 +52,7 @@ export class App extends React.Component {
         <Route exact path="/register" component={RegistrationPage} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/leaderboard" component={Leaderboard} />
+        <Footer />
       </div>
     );
   }

@@ -18,8 +18,7 @@ export function LandingPage(props) {
               <div className="landingImgContainer">
                 <img src={landingImg} alt="landingImg"/>
               </div>
-              <div className="description"></div>
-              <div className="footer"></div>
+              <div className="description">Description of the App</div>
             </main>
         </React.Fragment>
         // <div className="home">
