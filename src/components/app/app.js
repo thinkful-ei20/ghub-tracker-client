@@ -6,7 +6,7 @@ import Header from '../header/header';
 import Footer from '../footer/footer';
 import LandingPage from '../landing-page';
 import Dashboard from '../dashboard';
-import RegistrationPage from '../registration-page';
+import RegistrationPage from '../registration-page/registration-page';
 import LoginPage from '../login-page/login-page';
 import { Leaderboard } from '../leaderboard';
 
