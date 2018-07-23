@@ -26,8 +26,8 @@ class TopNav extends React.Component {
   renderLoggedOut() {
     return (
       <React.Fragment>
-        <li><Link to={`/login`} aria-label="Click to log in">Log in</Link></li>
-        <li><Link to={`/register`} aria-label="Click to sign up">Sign Up</Link></li>
+        <li><Link className="loginLink button" to={`/login`} aria-label="Click to log in">Log in</Link></li>
+        <li><Link className="signupLink button" to={`/register`} aria-label="Click to sign up">Sign Up</Link></li>
       </React.Fragment>
     );
   }

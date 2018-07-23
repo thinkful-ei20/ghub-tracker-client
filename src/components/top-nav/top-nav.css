@@ -1,6 +1,6 @@
 nav {
   /* background-color: black; */
-  margin: 0;
+  margin: 15px;
   overflow: hidden;
 }
 nav ul {
@@ -28,4 +28,32 @@ nav ul li a.logo {
 }
 nav ul li a:hover {
   /* background-color: blue; */
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.button {
+  font: bold 18px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 6px 6px 6px 6px;
+  border-top: 1px solid #33776B;
+  border-right: 1px solid #33776B;
+  border-bottom: 1px solid #33776B;
+  border-left: 1px solid #33776B;
+}
+
+.loginLink {
+  background-color: #fff;
+  color: #000;
+  margin-right: 7px;
+}
+
+.signupLink {
+  background-color: #33776B;
+  color: #fff;
 }
