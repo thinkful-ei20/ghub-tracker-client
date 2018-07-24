@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import TopNav from '../top-nav/top-nav';
+import TopNav from '../top-nav/';
 
 export default function Header(props) {
   return (

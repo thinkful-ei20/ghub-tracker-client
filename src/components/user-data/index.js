@@ -1,6 +1,6 @@
 import React from 'react';
-import Details from './details';
-import FriendList from './friends-list';
+import Details from '../details/';
+import FriendList from '../friends-list/';
 
 export const UserData = () => {
   return (
