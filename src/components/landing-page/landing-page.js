@@ -1,10 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-import landingImg from'../../landing.jpg';
+import Background from './background_image.png';
 
-// import LoginForm from './login-form';
 import './landing-page.css';
+
+var landingStyle = {
+    backgroundImage: `url(${Background})`,
+};
 
 export function LandingPage(props) {
     // If we are logged in redirect straight to the user's dashboard
@@ -15,17 +18,18 @@ export function LandingPage(props) {
     return (
         <React.Fragment>
             <main>
-              <div className="landingImgContainer">
-                <img src={landingImg} alt="landingImg"/>
-              </div>
-              <div className="description">Description of the App</div>
+                <section className="landing-banner text-center" style={landingStyle}>
+                    <h3>Something Catchy</h3>
+                    <Link to={`/register`} aria-label="Click to sign up">Sign Up</Link>
+                </section>
+                <section className="landing-description text-center">
+                    <p>Description Here</p>
+                </section>
+                <section className="landing-footer text-center">
+                    <p>Footer</p>
+                </section>
             </main>
         </React.Fragment>
-        // <div className="home">
-        //     <h2>Welcome to Foo App</h2>
-        //     <LoginForm />
-        //     <Link to="/register">Register</Link>
-        // </div>
     );
 }
 
