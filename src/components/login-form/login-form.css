@@ -1,0 +1,21 @@
+.loginButton {
+  font: bold 18px Arial;
+  text-decoration: none;
+  background-color: #33776B;
+  color: #fff;
+  padding: 6px 6px 6px 6px;
+  border-top: 1px solid #33776B;
+  border-right: 1px solid #33776B;
+  border-bottom: 1px solid #33776B;
+  border-left: 1px solid #33776B;
+  border-radius: 10%;
+}
+
+input {
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  margin-bottom: 5%;
+  outline:none;
+}
