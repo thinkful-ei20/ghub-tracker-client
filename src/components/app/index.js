@@ -8,7 +8,7 @@ import LandingPage from '../landing-page';
 import Dashboard from '../dashboard';
 import RegistrationPage from '../registration-page';
 import LoginPage from '../login-page';
-import { Leaderboard } from '../leaderboard/';
+import Leaderboard from '../leaderboard/';
 
 // import { refreshAuthToken } from '../actions/auth';
 import { refreshAuthToken } from '../../actions/auth'
