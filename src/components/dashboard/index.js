@@ -4,6 +4,7 @@ import requiresLogin from '../requires-login';
 import { fetchUserProfile } from '../../actions/profile';
 
 import ProfileCard from '../profile/card';
+import FriendCard from '../friends-list/card';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
@@ -14,6 +15,7 @@ export class Dashboard extends React.Component {
     return (
       <div>
         <ProfileCard profile={this.props.profile} />
+        <FriendCard profile={this.props.profile.friends} />
       </div>
     )
   }

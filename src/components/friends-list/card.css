@@ -1,0 +1,20 @@
+.friend-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+}
+
+.friend {
+  padding: 10px;
+  width: 100%;
+  border: solid 1px gray;
+}
+
+.friendTitle {
+  text-align: center;
+}

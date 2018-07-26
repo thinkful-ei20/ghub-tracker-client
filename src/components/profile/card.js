@@ -11,6 +11,7 @@ export default (props) => {
 
         <p className="title">{props.profile.type}</p>
         <a href={props.profile.html_url}>GitHub</a>
+        <p className="publicRepos">Public Repos: {props.profile.public_repos}</p>
         <p><button>Contact</button></p>
       </div>
     )
