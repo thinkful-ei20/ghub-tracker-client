@@ -10,16 +10,29 @@ export class Dashboard extends React.Component {
   }
   
   render() {
+    let commitNum = 0;
+    if(this.props.protectedData.repos) {
+      for(let i = 0; i < this.props.protectedData.repos.length; i++) {
+        if(this.props.protectedData.repos[i].commits) {
+          commitNum = commitNum + this.props.protectedData.repos[i].commits;
+        }
+      }
+      
+    }
+    
     return (
       <div className="dashboard">
         <div className="dashboard-username">
           Username: {this.props.username}
         </div>
-        <div className="dashboard-name">
+        {/* <div className="dashboard-name">
           Name: {this.props.name}
-        </div>
-        <div className="dashboard-protected-data">
+        </div> */}
+        {/* <div className="dashboard-protected-data">
           Protected data: {this.props.protectedData}
+        </div> */}
+        <div className="dashboard-commits">
+          Commits: { commitNum }
         </div>
         <UserData />
       </div>
