@@ -60,3 +60,13 @@ export const acceptRequest = sendingUser => (dispatch, getState) => {
     .then(res => normalizeResponseErrors(res))
     .catch(err => err)
 }
+
+export const getFriends = (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/users/dashboard`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${authToken}`
+    }
+  })
+}
