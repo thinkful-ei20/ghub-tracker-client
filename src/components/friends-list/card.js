@@ -11,7 +11,7 @@ export default (props) => {
       let friendList = props.profile.map(function(currFriend, index) {
       
         return (
-          <li className="friend"> Name: {currFriend.friend.username} </li>
+          <li className="friend"> {currFriend.friend.username} </li>
         );
       });
   

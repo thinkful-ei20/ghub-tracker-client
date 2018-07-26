@@ -16,5 +16,7 @@ ul, li {
 }
 
 .friendTitle {
+  padding: 10px;
+  background-color: #33776B;
   text-align: center;
 }
