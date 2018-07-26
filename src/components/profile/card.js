@@ -8,7 +8,8 @@ export default (props) => {
       <div className='profile-card'>
         <img src={props.profile.avatar_url} alt={props.profile.username} />
         <h1>{props.profile.username}</h1>
-        <p class="title">{props.profile.type}</p>
+
+        <p className="title">{props.profile.type}</p>
         <a href={props.profile.html_url}>GitHub</a>
         <p><button>Contact</button></p>
       </div>
