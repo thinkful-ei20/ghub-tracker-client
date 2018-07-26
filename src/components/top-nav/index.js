@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { clearAuth } from "../../actions/auth";
 import { clearAuthToken } from "../../local-storage";
 
+import { Nav } from '../Nav/';
+
 import './top-nav.css'
 
 class TopNav extends React.Component {
@@ -17,7 +19,8 @@ class TopNav extends React.Component {
   renderLoggedIn() {
     return (
       <React.Fragment>
-        <li><Link to={`/dashboard`} aria-label="Click to see the leaderboard">Leaderboard</Link></li>
+        < Nav />
+        {/* <li><Link to={`/dashboard`} aria-label="Click to see the leaderboard">Dashboard</Link></li> */}
         <li><Link to={`/`} aria-label="Click to sign out" onClick={this.signOut}>Sign Out</Link></li>
       </React.Fragment>
     );

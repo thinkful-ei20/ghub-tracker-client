@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {clearAuth} from '../actions/auth';
-import {clearAuthToken} from '../local-storage';
+import {clearAuth} from '../../actions/auth';
+import {clearAuthToken} from '../../local-storage';
+
+import './Nav.css'
 
 export class Nav extends React.Component {
   logOut() {
@@ -44,14 +46,14 @@ export class Nav extends React.Component {
     let logOutButton;
     if (this.props.loggedIn) {
         logOutButton = (
-            <button onClick={() => this.logOut()}>Log out</button>
+            <button onClick={() => this.logOut()}>SignOut</button>
         );
     }
     
     return (
-      <div>
+      <div className="navWrapper">
         <div onClick={this.showMenu}>
-          Show menu
+          username
         </div>
         
         {
@@ -63,9 +65,9 @@ export class Nav extends React.Component {
                   this.dropdownMenu = element;
                 }}
               >
-                <div> {logOutButton} </div>
                 <div> <Link to="/">Dashboard</Link> </div>
                 <div> <Link to="/leaderboard">Leaderboard</Link> </div>
+                <div> {logOutButton} </div>
               </div>
             )
             : (
