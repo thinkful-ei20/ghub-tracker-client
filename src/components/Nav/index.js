@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
-import {clearAuth} from '../../actions/auth';
-import {clearAuthToken} from '../../local-storage';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { clearAuth } from '../../actions/auth';
+import { clearAuthToken } from '../../local-storage';
 
 import './Nav.css'
+
 
 export class Nav extends React.Component {
   logOut() {
@@ -49,11 +50,11 @@ export class Nav extends React.Component {
             <button onClick={() => this.logOut()}>SignOut</button>
         );
     }
-    
+    // console.log(this.props)
     return (
       <div className="navWrapper">
         <div onClick={this.showMenu}>
-          username
+          {/* {this.props.username} */}user
         </div>
         
         {
@@ -79,10 +80,15 @@ export class Nav extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null,
+const mapStateToProps = state => {
+  // const {currentUser} = state.auth;
 
-});
+  return {
+    loggedIn: state.auth.currentUser !== null,
+    // username: state.auth.currentUser.username,
+  }
+
+};
 
 
 export default connect(mapStateToProps)(Nav);
