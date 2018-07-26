@@ -38,14 +38,11 @@ export class Details extends React.Component {
     let commitList = this.props.protectedData.repos;
 
     if(commitList) {
-      for(let i = 0; i < commitList.length; i++) {
-        if(commitList[i].commits) {
-          commitNum = commitNum + commitList[i].commits;
-        }
-      }
 
       detailList = commitList.map(function(currElement, index) {
-        return <li> {currElement.name} - commits: {currElement.commits} </li>;
+        commitNum = commitNum + currElement.commits;
+        return (
+        <li> {currElement.name} - commits: {currElement.commits} </li>);
       });
     }
 

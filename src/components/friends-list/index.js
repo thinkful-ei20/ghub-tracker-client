@@ -23,3 +23,14 @@ export const FriendsList = ({friends}) => {
 } 
 
 export default FriendsList;
+
+// export class FriendsList extends React.Component {
+//   componentDidMount() {
+//     this.props.dispatch(getFriends())
+//   }
+
+
+//   render() {
+
+//   }
+// }
