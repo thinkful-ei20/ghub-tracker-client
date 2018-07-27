@@ -26,13 +26,19 @@ export class Dashboard extends React.Component {
         </div>
         <div class="column right">
           <h2>REPO SUMMARY</h2>
+          <p>Total commits per repo</p>
           {this.props.profile.repos ? (
             <PieChart
-              data={[
-                { key: 'A', value: 100 },
-                { key: 'B', value: 200 },
-                { key: 'C', value: 50 }
-              ]}
+              size={600}
+              innerHoleSize={300}
+              padding={50}
+              labels
+              data={this.props.profile.repos.map((repo, index) => {
+                return {
+                  key: `${repo.name} (${repo.commits.length})`,
+                  value: repo.commits.length
+                };
+              })}
             />
           ) : (
               <p>Loading...</p>
