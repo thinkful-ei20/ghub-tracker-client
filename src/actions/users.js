@@ -5,12 +5,12 @@ import { normalizeResponseErrors } from './utils';
 
 export const registerUser = user => dispatch => {
   return fetch(`${API_BASE_URL}/users/register`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(user)
-    })
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(user)
+  })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
     .catch(err => {
