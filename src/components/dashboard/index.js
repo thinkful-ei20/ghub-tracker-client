@@ -6,6 +6,8 @@ import { fetchUserProfile } from '../../actions/profile';
 import ProfileCard from '../profile/card';
 import FriendsList from '../friends/list';
 
+import { PieChart } from 'react-easy-chart';
+
 import './dashboard.css';
 
 export class Dashboard extends React.Component {
@@ -24,6 +26,17 @@ export class Dashboard extends React.Component {
         </div>
         <div class="column right">
           <h2>REPO SUMMARY</h2>
+          {this.props.profile.repos ? (
+            <PieChart
+              data={[
+                { key: 'A', value: 100 },
+                { key: 'B', value: 200 },
+                { key: 'C', value: 50 }
+              ]}
+            />
+          ) : (
+              <p>Loading...</p>
+            )}
         </div>
       </div>
     )
