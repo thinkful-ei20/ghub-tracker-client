@@ -31,8 +31,8 @@ export const registerUser = user => dispatch => {
 };
 
 export const getPublicProfile = username => () => {
-  return fetch(`${API_BASE_URL}/users/${username}`)
-  // return fetch(`${API_BASE_URL}/users/profile/${username}`)
+  // return fetch(`${API_BASE_URL}/users/${username}`)
+  return fetch(`${API_BASE_URL}/users/profile/${username}`)
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
     .catch(err => err)

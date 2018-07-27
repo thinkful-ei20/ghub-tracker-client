@@ -48,7 +48,7 @@ export class FriendCard extends React.Component {
   }
 
   onFriendClick(userName) {
-    // console.log('CLICK SUCCESS',userName.friend.username);
+    console.log('CLICK SUCCESS',userName.friend.username);
     this.props.loadPuplicProfile(userName.friend.username);
   }
 
