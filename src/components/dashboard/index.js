@@ -15,7 +15,8 @@ export class Dashboard extends React.Component {
     return (
       <div>
         <ProfileCard profile={this.props.profile} />
-        <FriendCard profile={this.props.profile.friends} />
+        {/* <FriendCard profile={this.props.profile.friends} /> */}
+        <FriendCard  />
       </div>
     )
   }
