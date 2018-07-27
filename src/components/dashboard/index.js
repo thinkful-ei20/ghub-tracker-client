@@ -6,6 +6,8 @@ import { fetchUserProfile } from '../../actions/profile';
 import ProfileCard from '../profile/card';
 import FriendsList from '../friends/list';
 
+import './dashboard.css';
+
 export class Dashboard extends React.Component {
   componentDidMount() {
     this.props.loadProfile();
@@ -13,9 +15,16 @@ export class Dashboard extends React.Component {
 
   render() {
     return (
-      <div className="user-profile">
-        <ProfileCard profile={this.props.profile} />
-        <FriendsList friends={this.props.profile.friends} />
+      <div class="row">
+        <div class="column left">
+          <div className="user-profile">
+            <ProfileCard profile={this.props.profile} />
+            <FriendsList friends={this.props.profile.friends} />
+          </div>
+        </div>
+        <div class="column right">
+          <h2>REPO SUMMARY</h2>
+        </div>
       </div>
     )
   }
