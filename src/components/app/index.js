@@ -9,6 +9,7 @@ import Dashboard from '../dashboard';
 import RegistrationPage from '../registration-page';
 import LoginPage from '../login-page';
 import Leaderboard from '../leaderboard/';
+import FriendPage from '../friend-profile/';
 
 // import { refreshAuthToken } from '../actions/auth';
 import { refreshAuthToken } from '../../actions/auth'
@@ -47,6 +48,7 @@ export class App extends React.Component {
     return (
       <div className="app">
         <Header />
+        <Route exact path="/friends" component={FriendPage} />
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/register" component={RegistrationPage} />

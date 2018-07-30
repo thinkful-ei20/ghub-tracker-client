@@ -1,5 +1,6 @@
 import React from 'react';
 import FriendCard from './card';
+import  './list.css';
 
 export default function List(props) {
   if (props.friends) {
