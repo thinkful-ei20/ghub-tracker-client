@@ -1,4 +1,5 @@
 import React from 'react';
+import './friend-profile.css';
 
 export default function FriendProfile(props) {
   // console.log(props)
@@ -6,7 +7,8 @@ export default function FriendProfile(props) {
     console.log('PROPS EXIST')
   }
   return (
-    <div className="friend-profile">
+    <div className="friendProfile">
+      <h3 className="friendProfileTitle">Public Profile</h3>
       {/* <h3>{props.friend.username}</h3> */}
     </div>
   );

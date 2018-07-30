@@ -10,6 +10,7 @@ import RegistrationPage from '../registration-page';
 import LoginPage from '../login-page';
 import Leaderboard from '../leaderboard/';
 import FriendPage from '../friend-profile/';
+import FriendChallenges from '../friend-challenges/';
 
 // import { refreshAuthToken } from '../actions/auth';
 import { refreshAuthToken } from '../../actions/auth'
@@ -49,6 +50,7 @@ export class App extends React.Component {
       <div className="app">
         <Header />
         <Route exact path="/friends" component={FriendPage} />
+        <Route exact path="/friend-challenges" component={FriendChallenges} />
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/register" component={RegistrationPage} />

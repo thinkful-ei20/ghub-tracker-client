@@ -1,0 +1,11 @@
+.friendCard {
+  padding: 5px;
+}
+
+.friendName {
+  margin-right: 5px;
+}
+
+.friendLink, challengeLink {
+  margin-right: 5px;
+}
