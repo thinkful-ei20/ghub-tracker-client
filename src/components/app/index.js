@@ -9,7 +9,7 @@ import Dashboard from '../dashboard';
 import RegistrationPage from '../registration-page';
 import LoginPage from '../login-page';
 import Leaderboard from '../leaderboard/';
-import FriendPage from '../friend-profile/';
+import FriendPage from '../friend-profile/card';
 import FriendChallenges from '../friend-challenges/';
 
 // import { refreshAuthToken } from '../actions/auth';
