@@ -5,6 +5,7 @@ import { fetchUserProfile } from '../../actions/profile';
 
 import ProfileCard from '../profile/card';
 import FriendsList from '../friends/list';
+import AddFriendForm from '../add-friend-form/';
 
 import { PieChart } from 'react-easy-chart';
 
@@ -43,6 +44,8 @@ export class Dashboard extends React.Component {
           ) : (
               <p>Loading...</p>
             )}
+
+            <AddFriendForm />
         </div>
       </div>
     )
