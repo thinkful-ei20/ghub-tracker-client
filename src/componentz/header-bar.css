@@ -31,6 +31,12 @@ header a.signup-button {
   color: #fff;
 }
 
+header a.login-button:hover,
+header a.signup-button:hover {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .header-right {
   float: right;
 }

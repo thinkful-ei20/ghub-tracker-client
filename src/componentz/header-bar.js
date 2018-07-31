@@ -29,8 +29,8 @@ export class HeaderBar extends React.Component {
     }
     return (
       <header>
-        <a href="#default" class="logo">Commit2Win</a>
-        <div class="header-right">
+        <Link to="/" className="logo">Commit2Win</Link>
+        <div className="header-right">
           {links}
         </div>
       </header>
