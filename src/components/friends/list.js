@@ -4,12 +4,16 @@ import  './list.css';
 
 export default function List(props) {
   if (props.friends) {
-    console.log('FRIENDLIST',props.friends)
-    const friends = props.friends.map((friend, index) =>
-      <li className="friends-list-wrapper" key={index}>
-        <FriendCard {...friend} />
-      </li>
-    );
+    let friends;
+
+    props.friends.map((friend, index) => {
+      if(friend.status === 'accepted') {
+        friends = 
+        <li className="friends-list-wrapper" key={index}>
+          <FriendCard {...friend} />
+        </li>
+      }
+    });
 
     return (
       <div className="friends text-center">

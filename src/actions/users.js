@@ -92,9 +92,6 @@ export const getFriends = () => (dispatch, getState) => {
   })
   .then(res => normalizeResponseErrors(res))
   .then(res => res.json())
-    .then(friends => {
-      console.log(friends)
-      dispatch(getFriendsSuccess(friends))
-    })
-    .catch(error => dispatch(getFriendsError(error)))
+  .then(friends => dispatch(getFriendsSuccess(friends)))
+  .catch(error => dispatch(getFriendsError(error)))
 }
