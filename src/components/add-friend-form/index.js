@@ -17,18 +17,10 @@ export class SendFriendRequest extends React.Component {
       }
     }
 
-    componentDidMount() {
-      if(this.state.friendId !== "" || this.state.friendId !== null) {
-        this.props.dispatch(sendFriendRequest(this.state.friendId))
-      }
-    }
-
     onSubmit(username) {
 
       return this.props.dispatch(getPublicProfile(username.username)).then(data => {
-        this.setState({
-          friendId: data.id
-        })
+        this.props.dispatch(sendFriendRequest(data.id))
       });
     }
 

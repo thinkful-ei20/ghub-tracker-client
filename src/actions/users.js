@@ -39,6 +39,7 @@ export const getPublicProfile = username => () => {
 }
 
 export const sendFriendRequest = receivingUser => (dispatch, getState) => {
+  console.log('SentFriendRequest')
   const authToken = getState().auth.authToken
   return fetch(`${API_BASE_URL}/users/addFriend/${receivingUser}`, {
     method: 'GET',
