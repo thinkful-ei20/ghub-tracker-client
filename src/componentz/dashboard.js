@@ -14,11 +14,11 @@ export class Dashboard extends React.Component {
     return (
       <div className="dashboard">
         <div className="dashboard-username">
-          Username: {this.props.profile.username}
+          Username: {this.props.profile.login}
         </div>
-        <div className="dashboard-name">Name: {this.props.profile.name}</div>
+        <div className="dashboard-name">Name: {this.props.profile.firstname}</div>
         <div className="dashboard-protected-data">
-          Protected data: {this.props.profile.username}
+          Protected data: {this.props.profile.email}
         </div>
       </div>
     );
