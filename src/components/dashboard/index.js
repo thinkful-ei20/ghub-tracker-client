@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from '../requires-login';
 import { fetchUserProfile } from '../../actions/profile';
+import { getFriends } from '../../actions/users';
 
 import ProfileCard from '../profile/card';
 import FriendsList from '../friends/list';
@@ -14,6 +15,7 @@ import './dashboard.css';
 export class Dashboard extends React.Component {
   componentDidMount() {
     this.props.loadProfile();
+    this.props.loadFriends();
   }
 
   render() {
@@ -22,7 +24,7 @@ export class Dashboard extends React.Component {
         <div class="column left">
           <div className="user-profile">
             <ProfileCard profile={this.props.profile} />
-            <FriendsList friends={this.props.profile.friends} />
+            <FriendsList friends={this.props.friends} />
           </div>
         </div>
         <div class="column right">
@@ -55,11 +57,13 @@ export class Dashboard extends React.Component {
 const mapStateToProps = state => ({
   profile: state.profile.data,
   loading: state.profile.loading,
-  error: state.profile.error
+  error: state.profile.error,
+  friends:  state.friends.data
 });
 
 const mapDispatchToProps = dispatch => ({
-  loadProfile: () => dispatch(fetchUserProfile())
+  loadProfile: () => dispatch(fetchUserProfile()),
+  loadFriends: () => dispatch(getFriends())
 });
 
 export default requiresLogin()(connect(mapStateToProps, mapDispatchToProps)(Dashboard));

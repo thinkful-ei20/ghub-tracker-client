@@ -3,6 +3,7 @@ import FriendCard from './card';
 import  './list.css';
 
 export default function List(props) {
+  console.log('FRIENDLIST',props)
   if (props.friends) {
     const friends = props.friends.map((friend, index) =>
       <li className="friends-list-wrapper" key={index}>

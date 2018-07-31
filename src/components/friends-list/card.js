@@ -37,14 +37,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from '../requires-login';
-import { fetchUserProfile } from '../../actions/profile';
+// import { fetchUserProfile } from '../../actions/profile';
+import { getFriends } from '../../actions/users';
 import { getPublicProfile } from '../../actions/users';
 
 import './card.css';
 
 export class FriendCard extends React.Component {
   componentDidMount() {
-    this.props.loadProfile();
+    this.props.loadFriends();
   }
 
   onFriendClick(userName) {
@@ -54,8 +55,9 @@ export class FriendCard extends React.Component {
 
   render() {
     let friendList;
-    if(this.props.profile.friends) {
-      friendList = this.props.profile.friends.map((currFriend, index) => {
+    console.log(this.props.friends)
+    if(this.props.friends) {
+      friendList = this.props.friends.map((currFriend, index) => {
       
         return (
           // <li key={index} className="friend"> <button  onClick={ () => console.log(this) }> {currFriend.friend.username} </button></li>
@@ -77,14 +79,20 @@ export class FriendCard extends React.Component {
 
 }
 
+// const mapStateToProps = state => ({
+//   profile: state.profile.data,
+//   loading: state.profile.loading,
+//   error: state.profile.error
+// });
+
 const mapStateToProps = state => ({
-  profile: state.profile.data,
-  loading: state.profile.loading,
-  error: state.profile.error
+  friends: state.friends,
+  loading: state.friends.loading,
+  error: state.friends.error
 });
 
 const mapDispatchToProps = dispatch => ({
-  loadProfile: () => dispatch(fetchUserProfile()),
+  loadFriends: () => dispatch(getFriends()),
   loadPuplicProfile: (userName) => dispatch(getPublicProfile(userName))
 });
 

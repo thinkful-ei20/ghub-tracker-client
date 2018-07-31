@@ -10,6 +10,7 @@ import protectedDataReducer from './reducers/protected-data';
 import { setAuthToken, refreshAuthToken } from './actions/auth';
 import leaderboardReducer from './reducers/leaderboard';
 import profileReducer from './reducers/profile';
+import friendReducer from './reducers/users';
 
 const store = createStore(
 	combineReducers({
@@ -17,7 +18,8 @@ const store = createStore(
 		auth: authReducer,
 		protectedData: protectedDataReducer,
 		leaderboard: leaderboardReducer,
-		profile: profileReducer
+    profile: profileReducer,
+    friends: friendReducer
 	}),
 	composeWithDevTools(applyMiddleware(thunk))
 );

@@ -3,6 +3,24 @@ import { SubmissionError } from 'redux-form';
 import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utils';
 
+
+export const GET_FRIENDS_REQUEST = 'GET_FRIENDS_REQUEST'
+export const getFriendsRequest = () => ({
+  type: GET_FRIENDS_REQUEST
+})
+
+export const GET_FRIENDS_SUCCESS = 'GET_FRIENDS_SUCCESS'
+export const getFriendsSuccess = friends => ({
+  type: GET_FRIENDS_SUCCESS,
+  friends
+})
+
+export const GET_FRIENDS_ERROR = 'GET_FRIENDS_ERROR'
+export const getFriendsError = error => ({
+  type: GET_FRIENDS_ERROR,
+  error
+})
+
 export const registerUser = user => dispatch => {
   return fetch(`${API_BASE_URL}/users/register`, {
     method: 'POST',
@@ -63,7 +81,8 @@ export const acceptRequest = sendingUser => (dispatch, getState) => {
     .catch(err => err)
 }
 
-export const getFriends = (dispatch, getState) => {
+export const getFriends = () => (dispatch, getState) => {
+  dispatch(getFriendsRequest())
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/users/dashboard`, {
     method: 'GET',
@@ -71,4 +90,6 @@ export const getFriends = (dispatch, getState) => {
       'Authorization': `Bearer ${authToken}`
     }
   })
+    .then(friends => dispatch(getFriendsSuccess(friends)))
+    .catch(error => dispatch(getFriendsError(error)))
 }

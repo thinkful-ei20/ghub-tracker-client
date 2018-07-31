@@ -26,7 +26,6 @@ export class SendFriendRequest extends React.Component {
 
     render() 
     {
-      console.log('USERID', this.state.friendId);
         let error;
         if (this.props.error) {
             error = (
