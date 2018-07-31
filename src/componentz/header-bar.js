@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
+import { Link } from 'react-router-dom';
+import './header-bar.css';
 
 export class HeaderBar extends React.Component {
   logOut() {
@@ -11,17 +13,27 @@ export class HeaderBar extends React.Component {
 
   render() {
     // Only render the log out button if we are logged in
-    let logOutButton;
+    let links;
     if (this.props.loggedIn) {
-      logOutButton = (
-        <button onClick={() => this.logOut()}>Log out</button>
+      links = (
+        <Link onClick={() => this.logOut()}>Log out</Link>
+      );
+    }
+    else {
+      links = (
+        <React.Fragment>
+          <Link to="/login" className="login-button">Log in</Link>
+          <Link to="/register" className="signup-button">Sign up</Link>
+        </React.Fragment>
       );
     }
     return (
-      <div className="header-bar">
-        <h1>Foo App</h1>
-        {logOutButton}
-      </div>
+      <header>
+        <a href="#default" class="logo">Commit2Win</a>
+        <div class="header-right">
+          {links}
+        </div>
+      </header>
     );
   }
 }
