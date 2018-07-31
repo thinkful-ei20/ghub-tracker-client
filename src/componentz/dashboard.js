@@ -1,35 +1,38 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
-import { fetchProtectedData } from '../actions/protected-data';
+// import { fetchProtectedData } from '../actions/protected-data';
+import { fetchUserProfile } from '../actions/profile';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
-    this.props.dispatch(fetchProtectedData());
+    // this.props.dispatch(fetchProtectedData());
+    this.props.loadProfile();
   }
 
   render() {
     return (
       <div className="dashboard">
         <div className="dashboard-username">
-          Username: {this.props.username}
+          Username: {this.props.profile.username}
         </div>
-        <div className="dashboard-name">Name: {this.props.name}</div>
+        <div className="dashboard-name">Name: {this.props.profile.name}</div>
         <div className="dashboard-protected-data">
-          Protected data: {this.props.protectedData.username}
+          Protected data: {this.props.profile.username}
         </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
-  const { currentUser } = state.auth;
-  return {
-    username: state.auth.currentUser.username,
-    name: `${currentUser.firstName} ${currentUser.lastName}`,
-    protectedData: state.protectedData.data
-  };
-};
+const mapStateToProps = state => ({
+  profile: state.profile.data,
+  loading: state.profile.loading,
+  error: state.profile.error
+});
 
-export default requiresLogin()(connect(mapStateToProps)(Dashboard));
+const mapDispatchToProps = dispatch => ({
+  loadProfile: () => dispatch(fetchUserProfile())
+});
+
+export default requiresLogin()(connect(mapStateToProps, mapDispatchToProps)(Dashboard));
