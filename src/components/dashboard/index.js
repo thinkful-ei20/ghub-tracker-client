@@ -13,7 +13,7 @@ import { PieChart } from 'react-easy-chart';
 import './dashboard.css';
 
 export class Dashboard extends React.Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.loadProfile();
     this.props.loadFriends();
   }

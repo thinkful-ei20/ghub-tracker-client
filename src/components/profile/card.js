@@ -4,6 +4,7 @@ import './card.css';
 
 export default (props) => {
   if (props.profile) {
+    // console.log('PROFILE',props)
     return (
       <div className='profile-card'>
         <img src={props.profile.avatar_url} alt={props.profile.username} />

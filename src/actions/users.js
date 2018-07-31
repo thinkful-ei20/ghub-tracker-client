@@ -90,6 +90,11 @@ export const getFriends = () => (dispatch, getState) => {
       'Authorization': `Bearer ${authToken}`
     }
   })
-    .then(friends => dispatch(getFriendsSuccess(friends)))
+  .then(res => normalizeResponseErrors(res))
+  .then(res => res.json())
+    .then(friends => {
+      console.log(friends)
+      dispatch(getFriendsSuccess(friends))
+    })
     .catch(error => dispatch(getFriendsError(error)))
 }
