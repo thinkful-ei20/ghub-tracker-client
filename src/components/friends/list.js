@@ -3,9 +3,8 @@ import FriendCard from './card';
 import  './list.css';
 
 export default function List(props) {
+  let friends;
   if (props.friends) {
-    let friends;
-
     props.friends.map((friend, index) => {
       if(friend.status === 'accepted') {
         friends = 

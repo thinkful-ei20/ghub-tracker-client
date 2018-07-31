@@ -20,14 +20,14 @@ export class Dashboard extends React.Component {
 
   render() {
     return (
-      <div class="row">
-        <div class="column left">
+      <div className="row">
+        <div className="column left">
           <div className="user-profile">
             <ProfileCard profile={this.props.profile} />
             <FriendsList friends={this.props.friends} />
           </div>
         </div>
-        <div class="column right">
+        <div className="column right">
           <h2>REPO SUMMARY</h2>
           <p>Total commits per repo</p>
           {this.props.profile.repos ? (
