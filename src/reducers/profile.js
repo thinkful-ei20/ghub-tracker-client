@@ -5,7 +5,7 @@ import {
 } from '../actions/profile';
 
 const initialState = {
-  data: [],
+  data: null,
   loading: false,
   error: null
 };
