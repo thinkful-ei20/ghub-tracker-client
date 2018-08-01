@@ -17,7 +17,7 @@ export default ({ friends }) => {
 
   return (
     <section className="friends">
-      <h3>FFriends</h3>
+      <h3>Friends</h3>
       {chips}
     </section>
   );

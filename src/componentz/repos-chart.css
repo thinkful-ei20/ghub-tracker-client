@@ -1,0 +1,18 @@
+section.repos-chart h3{ 
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+section.repos-chart .chart-wrapper {
+  float: left;
+}
+
+section.repos-chart .legend-wrapper {
+  float: right;
+}
+
+section.repos-chart .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
