@@ -17,12 +17,16 @@ export class Dashboard extends React.Component {
     return (
       <div className="row">
         <div className="side">
-          <ProfileCard profile={this.props.profile} />
-          <FriendsList friends={this.props.profile} />
+          <div className="side-wrapper">
+            <ProfileCard profile={this.props.profile} />
+            <FriendsList friends={this.props.profile} />
+          </div>
         </div>
         <div className="main">
-          <ChallengesList challenges={this.props.profile} />
-          <ReposChart repos={this.props.profile} />
+          <div className="main-wrapper">
+            <ChallengesList challenges={this.props.profile} />
+            <ReposChart repos={this.props.profile} />
+          </div>
         </div>
       </div>
     );

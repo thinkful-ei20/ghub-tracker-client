@@ -8,15 +8,23 @@
 /* Sidebar/left column */
 .side {
   flex: 30%;
-  background-color: #adc8c3;
+  background-color: #d3d3d3;
   padding: 20px;
 }
+
+
 
 /* Main column */
 .main {   
   flex: 70%;
-  background-color: white;
+  background-color: #d3d3d3;
   padding: 20px;
+}
+
+.side-wrapper,
+.main-wrapper {
+  padding: 20px;
+  background-color: #fff;
 }
 
 /* Fake image, just for this example */
