@@ -7,19 +7,18 @@ export default ({ friends }) => {
     return null;
   }
 
+  const chips = friends.friends.map((friend, index) =>
+    <div className="chip" key={index}>
+      <img src={Avatar} alt="Person" width="96" height="96" />
+      <span>{friend.friend.username}</span>
+      <a href="#">Challenge</a>
+    </div>
+  );
+
   return (
     <section className="friends">
-      <h3>Friends</h3>
-      <div className="chip">
-        <img src={Avatar} alt="Person" width="96" height="96" />
-        John Doe
-  <span className="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-      </div>
-      <div className="chip">
-        <img src={Avatar} alt="Person" width="96" height="96" />
-        <span>Jane Doe</span>
-        <a href="#">Challenge</a>
-      </div>
+      <h3>FFriends</h3>
+      {chips}
     </section>
   );
 }

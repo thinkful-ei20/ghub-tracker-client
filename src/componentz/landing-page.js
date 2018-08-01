@@ -4,12 +4,9 @@ import { Link, Redirect } from 'react-router-dom';
 
 import Background from './landing-page.png';
 import './landing-page.css';
-import LoginForm from './login-form';
 
 const landingStyle = {
   backgroundImage: `url(${Background})`,
-  // backgroundRepeat: 'no-repeat',
-  // backgroundSize: '50% 50%',
 };
 
 export function LandingPage(props) {
