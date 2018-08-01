@@ -21,6 +21,7 @@ export const getFriendsError = error => ({
   error
 })
 
+
 export const registerUser = user => dispatch => {
   return fetch(`${API_BASE_URL}/users/register`, {
     method: 'POST',
@@ -49,7 +50,6 @@ export const registerUser = user => dispatch => {
 };
 
 export const getPublicProfile = username => () => {
-  // return fetch(`${API_BASE_URL}/users/${username}`)
   return fetch(`${API_BASE_URL}/users/profile/${username}`)
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
@@ -57,7 +57,6 @@ export const getPublicProfile = username => () => {
 }
 
 export const sendFriendRequest = receivingUser => (dispatch, getState) => {
-  console.log('SentFriendRequest')
   const authToken = getState().auth.authToken
   return fetch(`${API_BASE_URL}/users/addFriend/${receivingUser}`, {
     method: 'GET',
