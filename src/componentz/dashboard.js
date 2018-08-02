@@ -19,6 +19,10 @@ export class Dashboard extends React.Component {
     this.props.dispatch(sendChallenge(friend.id));
   }
 
+  acceptFriendChallenge = () => {
+    console.log('acceptFriendChallenge');
+  }
+
   render() {
     return (
       <div className="row">
@@ -34,7 +38,7 @@ export class Dashboard extends React.Component {
               <Tab>Commits</Tab>
             </TabList>
             <TabPanel>
-              <ChallengesList challenges={this.props.profile} />
+              <ChallengesList challenges={this.props.profile} acceptChallenge={this.acceptFriendChallenge} />
             </TabPanel>
             <TabPanel>
               <h2>Any content 2</h2>

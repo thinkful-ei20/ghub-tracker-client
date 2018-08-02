@@ -1,16 +1,19 @@
 import React from 'react';
 import './challenges-list.css';
 
-export default ({ challenges }) => {
-  if (!challenges) {
+export default (props) => {
+  if (!props.challenges) {
     return null;
   }
 
-  const rows = challenges.challenges.map((challenge, index) =>
+  const rows = props.challenges.challenges.map((challenge, index) =>
     <tr key={index}>
       <td>{challenge.receiver}</td>
       <td>{challenge.status}</td>
       <td>{challenge.sent}</td>
+      <td>
+        {challenge.status === "pending" ? <button onClick={() => props.acceptChallenge()}>Accept</button> : <button>Give Up</button>}
+      </td>
     </tr>
   );
 
@@ -22,6 +25,7 @@ export default ({ challenges }) => {
             <th>Reciever</th>
             <th>Status</th>
             <th>Sent</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
