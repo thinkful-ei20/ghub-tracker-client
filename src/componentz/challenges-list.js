@@ -16,7 +16,6 @@ export default ({ challenges }) => {
 
   return (
     <section className="challenges">
-      <h2>Challenges</h2>
       <table>
         <thead>
           <tr>
