@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import { fetchUserProfile } from '../actions/profile';
+import { sendChallenge } from '../actions/challenges';
 import './dashboard.css';
 import ProfileCard from './profile-card';
 import FriendsList from './friends-list';
@@ -15,7 +16,7 @@ export class Dashboard extends React.Component {
   }
 
   challengeFriend = (friend) => {
-    console.log(friend);
+    this.props.dispatch(sendChallenge(friend.id));
   }
 
   render() {
