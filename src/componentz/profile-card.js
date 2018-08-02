@@ -9,12 +9,23 @@ export default ({ profile }) => {
   return (
     <section className="profile">
       <div className="card">
-        <img src={profile.avatar_url} alt="John" style={{ width: "100%" }} />
-        <h1>{profile.username}</h1>
-        <p className="title">CEO & Founder, Example</p>
-        <p>Harvard University</p>
-        <a href="#">GITHUB URL</a>
-        <p><button>Contact</button></p>
+        <img src={profile.avatar_url} alt={profile.username} />
+        <p className="fullname">{profile.name}</p>
+        <p className="username">{profile.username}</p>
+        <div className="bio">
+          <p className="alignleft">Email</p>
+          <p className="alignright">{profile.email}</p>
+          <div style={{ clear: "both" }} />
+          <p className="alignleft">Website</p>
+          <p className="alignright">{profile.blog}</p>
+          <div style={{ clear: "both" }} />
+          <p className="alignleft">Location</p>
+          <p className="alignright">{profile.location}</p>
+          <div style={{ clear: "both" }} />
+          <p className="alignleft">GitHub</p>
+          <p className="alignright">{profile.html_url}</p>
+          <div style={{ clear: "both" }} />
+        </div>
       </div>
     </section>
   );
