@@ -9,10 +9,13 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import ChallengesList from './challenges-list';
 import ReposChart from './repos-chart';
 
-
 export class Dashboard extends React.Component {
   componentDidMount() {
     this.props.loadProfile();
+  }
+
+  challengeFriend = (friend) => {
+    console.log(friend);
   }
 
   render() {
@@ -20,7 +23,7 @@ export class Dashboard extends React.Component {
       <div className="row">
         <div className="side">
           <ProfileCard profile={this.props.profile} />
-          <FriendsList friends={this.props.profile} />
+          <FriendsList friends={this.props.profile} sendChallenge={this.challengeFriend} />
         </div>
         <div className="main">
           <Tabs>

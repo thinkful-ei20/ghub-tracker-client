@@ -37,7 +37,8 @@ section.friends .closebtn:hover {
   color: #000;
 }
 
-section.friends a {
+section.friends button {
+  margin-top: 15px;
   padding-left: 10px;
   color: #888;
   /* font-weight: bold; */
@@ -47,6 +48,6 @@ section.friends a {
   cursor: pointer;
 }
 
-section.friends a:hover {
+section.friends button:hover {
   color: #000;
 }
