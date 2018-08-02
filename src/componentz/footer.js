@@ -23,7 +23,7 @@ export default function Footer() {
       {/* <p>Contact Us</p> */}
 			<ul>
 				<li>
-					<a href="https://github.com/mdargitz">Jeffrey</a>
+					<a href="https://github.com/jeffreymahmoudi">Jeffrey</a>
 					<img
 						src='https://cdn.iconscout.com/public/images/icon/free/png-128/github-logo-brand-development-tools-318f14f5797bb6cc-128x128.png'
 						alt='Github logo'
@@ -31,7 +31,7 @@ export default function Footer() {
 				</li>
 
 				<li>
-					<a href="https://github.com/csprier">Hiram</a>
+					<a href="https://github.com/forgiv">Hiram</a>
 					<img
 						src='https://cdn.iconscout.com/public/images/icon/free/png-128/github-logo-brand-development-tools-318f14f5797bb6cc-128x128.png'
 						alt='Github logo'
@@ -39,7 +39,7 @@ export default function Footer() {
 				</li>
 
 				<li>
-					<a href="https://github.com/patersog">Neill</a>
+					<a href="https://github.com/neillsom">Neill</a>
 					<img
 						src='https://cdn.iconscout.com/public/images/icon/free/png-128/github-logo-brand-development-tools-318f14f5797bb6cc-128x128.png'
 						alt='Github logo'
@@ -47,7 +47,7 @@ export default function Footer() {
 				</li>
 
 				<li>
-					<a href="https://github.com/Sakela17">Tharaka</a>
+					<a href="https://github.com/codeNinja27">Tharaka</a>
 					<img
 						src='https://cdn.iconscout.com/public/images/icon/free/png-128/github-logo-brand-development-tools-318f14f5797bb6cc-128x128.png'
 						alt='Github logo'
