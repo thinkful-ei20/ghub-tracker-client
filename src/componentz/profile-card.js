@@ -1,5 +1,6 @@
 import React from 'react';
 import './profile-card.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default ({ profile }) => {
   if (!profile) {
@@ -11,7 +12,7 @@ export default ({ profile }) => {
       <div className="card">
         <img src={profile.avatar_url} alt={profile.username} />
         <p className="fullname">{profile.name}</p>
-        <p className="username">{profile.username}</p>
+        <p className="username"><FontAwesomeIcon icon="user" /> {profile.username}</p>
         <div className="bio">
           <p className="alignleft">Email</p>
           <p className="alignright">{profile.email}</p>

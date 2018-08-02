@@ -9,6 +9,11 @@ import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import LoginPage from './login-page';
 import { refreshAuthToken } from '../actions/auth';
+import { library } from '@fortawesome/fontawesome-svg-core'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faUser)
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
