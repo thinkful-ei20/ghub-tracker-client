@@ -12,7 +12,7 @@ export default (props) => {
       <td>{challenge.status}</td>
       <td>{challenge.sent}</td>
       <td>
-        {challenge.status === "pending" ? <button onClick={() => props.acceptChallenge()}>Accept</button> : <button>Give Up</button>}
+        {challenge.status === "pending" ? <button value={challenge} onClick={() => props.acceptChallenge(challenge)}>Accept</button> : <button>Give Up</button>}
       </td>
     </tr>
   );

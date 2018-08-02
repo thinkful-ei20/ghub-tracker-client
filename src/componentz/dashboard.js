@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import { fetchUserProfile } from '../actions/profile';
-import { sendChallenge } from '../actions/challenges';
+import { sendChallenge, acceptChallenge } from '../actions/challenges';
 import './dashboard.css';
 import ProfileCard from './profile-card';
 import FriendsList from './friends-list';
@@ -19,8 +19,10 @@ export class Dashboard extends React.Component {
     this.props.dispatch(sendChallenge(friend.id));
   }
 
-  acceptFriendChallenge = () => {
+  acceptFriendChallenge = (challenge) => {
     console.log('acceptFriendChallenge');
+    console.log(challenge)
+    // this.props.dispatch(acceptChallenge())
   }
 
   render() {
