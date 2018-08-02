@@ -1,0 +1,72 @@
+header {
+  overflow: hidden;
+  background: #50a3a2;
+  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  padding: 20px 10px;
+}
+
+header a {
+  float: left;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 18px;
+  margin: 0 6px;
+  width: 100px;
+}
+
+header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+header a.login-button {
+  /* background-color: #fff; */
+  border: 1px solid #33776b;
+}
+
+.signout-button {
+  background-color:transparent;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 18px;
+  text-align: center;
+  width: 100px;
+  padding: 9px;
+}
+
+
+
+header a.signup-button {
+  background-color: #33776b;
+  color: #fff;
+}
+
+header a.login-button:hover,
+header a.signup-button:hover,
+.signout-button:hover {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}

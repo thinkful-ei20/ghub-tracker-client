@@ -1,0 +1,62 @@
+section.profile .card {
+  background-color: #fff;
+  max-width: 300px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+section.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-top: 50px;
+}
+
+section.profile p {
+  margin: .5em 0;
+}
+
+section.profile .username {
+  color: grey;
+  font-size: 14px;
+}
+
+section.profile button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+section.profile a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+section.profile button:hover, section.profile a:hover {
+  opacity: 0.7;
+}
+
+section.profile .bio {
+  padding: 25px;
+}
+
+section.profile .bio .alignleft {
+	float: left;
+}
+section.profile .bio .alignright {
+  float: right;
+  color: gray;
+}
+
+
+section.profile .bio p {
+  font-size: 12px;
+}
