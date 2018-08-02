@@ -7,10 +7,10 @@ export default ({ friends }) => {
     return null;
   }
 
-  const chips = friends.friends.map((friend, index) =>
+  const chips = friends.friends.map(({friend}, index) =>
     <div className="chip" key={index}>
       <img src={Avatar} alt="Person" width="96" height="96" />
-      <span>{friend.friend.username}</span>
+      <span>{friend.username}</span>
       <a href="#">Challenge</a>
     </div>
   );

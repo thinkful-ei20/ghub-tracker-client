@@ -7,12 +7,12 @@
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
 .side {
-  flex: 30%;  
+  flex: 20%;  
 }
 
 /* Main column */
 .main {
-  flex: 70%;
+  flex: 80%;
 }
 
 .side, .main {
