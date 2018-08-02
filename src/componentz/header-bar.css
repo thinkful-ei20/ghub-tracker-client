@@ -1,12 +1,12 @@
 header {
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: #33776b;
   padding: 20px 10px;
 }
 
 header a {
   float: left;
-  color: black;
+  color: #fff;
   text-align: center;
   padding: 12px;
   text-decoration: none;
