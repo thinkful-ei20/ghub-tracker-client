@@ -17,7 +17,13 @@ form.login-form input[type=text]:focus, form.login-form input[type=password]:foc
 }
 
 form.login-form button {  
-  background-color: #337749;
+  /* background-color: #337749; */
+  font-size: 20px;
+  background: #50a3a2;
+  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
