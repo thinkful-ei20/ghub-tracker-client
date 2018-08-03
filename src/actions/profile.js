@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config';
+import { normalizeResponseErrors } from './utils';
 
 export const FETCH_USER_PROFILE_REQUEST = 'FETCH_USER_PROFILE_REQUEST';
 export const fetchUserProfileRequest = () => ({
@@ -27,6 +28,7 @@ export const fetchUserProfile = () => (dispatch, getState) => {
       Authorization: `Bearer ${authToken}`
     }
   })
+    .then(res => normalizeResponseErrors(res))
     .then(res => {
       if (!res.ok) {
         return Promise.reject(res.statusText);

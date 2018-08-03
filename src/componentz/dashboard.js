@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import { fetchUserProfile } from '../actions/profile';
-import { sendChallenge, acceptChallenge } from '../actions/challenges';
+import { sendChallenge, acceptChallenge, cancelChallenge } from '../actions/challenges';
 import './dashboard.css';
 import ProfileCard from './profile-card';
 import FriendsList from './friends-list';
@@ -15,22 +15,31 @@ export class Dashboard extends React.Component {
     this.props.loadProfile();
   }
 
-  challengeFriend = (friend) => {
-    this.props.dispatch(sendChallenge(friend.id));
+  componentWillReceiveProps(nextProps) {
+    if (this.props.chaloading && !nextProps.chaloading) {
+      this.props.loadProfile();
+    }
   }
 
-  acceptFriendChallenge = (challenge) => {
-    console.log('acceptFriendChallenge');
-    console.log(challenge)
-    // this.props.dispatch(acceptChallenge())
+  handleSendFriendChallenge = ({ id }) => {
+    this.props.sendChallengeConnect(id);
   }
+
+  handleAcceptFriendChallenge = ({ sender }) => {
+    this.props.acceptChallengeConnect(sender);
+  }
+
+  handleCancelFriendChallenge = (challenge) => {
+    console.log(challenge);
+    this.props.cancelChallengeConnect(challenge.receiver);
+  }  
 
   render() {
     return (
       <div className="row">
         <div className="side">
           <ProfileCard profile={this.props.profile} />
-          <FriendsList friends={this.props.profile} sendChallenge={this.challengeFriend} />
+          <FriendsList friends={this.props.profile} onSendFriendChallenge={this.handleSendFriendChallenge} />
         </div>
         <div className="main">
           <Tabs>
@@ -40,14 +49,12 @@ export class Dashboard extends React.Component {
               <Tab>Commits</Tab>
             </TabList>
             <TabPanel>
-              <ChallengesList challenges={this.props.profile} acceptChallenge={this.acceptFriendChallenge} />
+              <ChallengesList challenges={this.props.profile} onAcceptFriendChallenge={this.handleAcceptFriendChallenge} onCancelFriendChallenge={this.handleCancelFriendChallenge} />
             </TabPanel>
             <TabPanel>
-              <h2>Any content 2</h2>
               <ReposChart repos={this.props.profile} />
             </TabPanel>
             <TabPanel>
-              <h2>Any content 3</h2>
               <ReposChart repos={this.props.profile} />
             </TabPanel>
           </Tabs>
@@ -60,11 +67,18 @@ export class Dashboard extends React.Component {
 const mapStateToProps = state => ({
   profile: state.profile.data,
   loading: state.profile.loading,
-  error: state.profile.error
+  error: state.profile.error,
+  chaloading: state.challenges.loading,
+  chaerror: state.challenges.error
 });
 
 const mapDispatchToProps = dispatch => ({
-  loadProfile: () => dispatch(fetchUserProfile())
+  loadProfile: () => dispatch(fetchUserProfile()),
+  
+  sendChallengeConnect: (recieverId) => dispatch(sendChallenge(recieverId)),
+  acceptChallengeConnect: (senderId) => dispatch(acceptChallenge(senderId)),
+  cancelChallengeConnect: (recId) => dispatch(cancelChallenge(recId)),
+
 });
 
 export default requiresLogin()(connect(mapStateToProps, mapDispatchToProps)(Dashboard));

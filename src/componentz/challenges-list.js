@@ -12,7 +12,8 @@ export default (props) => {
       <td>{challenge.status}</td>
       <td>{challenge.sent}</td>
       <td>
-        {challenge.status === "pending" ? <button value={challenge} onClick={() => props.acceptChallenge(challenge)}>Accept</button> : <button>Give Up</button>}
+        {challenge.status === "requested" ? <button value={challenge} onClick={() => props.onAcceptFriendChallenge(challenge)}>Accept</button> : ''}
+        {/* {challenge.status === "pending" ? <button value={challenge} onClick={() => props.onCancelFriendChallenge(challenge)}>Cancel</button> : ''} */}
       </td>
     </tr>
   );

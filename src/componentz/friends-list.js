@@ -11,7 +11,7 @@ export default (props) => {
     <div className="chip" key={index}>
       <img src={Avatar} alt="Person" width="96" height="96" />
       <span>{friend.username}</span>
-      <button value={friend} onClick={() => props.sendChallenge(friend)}>Challenge</button>
+      <button value={friend} onClick={() => props.onSendFriendChallenge(friend)}>Challenge</button>
     </div>
   );
 
