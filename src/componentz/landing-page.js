@@ -26,7 +26,10 @@ export function LandingPage(props) {
           </div>
         </div>
         <div className="description">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar egestas lorem tincidunt tempor. Morbi pulvinar convallis fermentum. Integer ac neque a tortor consequat luctus. Sed vitae ex eros. Nulla molestie tortor quis lectus pulvinar, quis finibus est elementum. Cras at laoreet odio. Fusce in commodo ipsum. Integer ac libero suscipit, fringilla velit eu, dictum magna. In dignissim consectetur vehicula. Fusce tempor felis mauris, eu vestibulum nisl ultricies vel. Aenean quis nunc at elit dapibus tempus. Etiam sed purus quis eros tempor placerat id sed justo.</p>
+          <h2>What is this?</h2>
+          <p>Commit2Win is a web app created with the goal of using competition to encourage better version control usage.
+            <br />By tracking Github contributions, it allows users to compete with each other on a day-to-day basis.
+            <br />Users are further encouraged to compete with a challenge system that allows a user to directly compare their contributions with another.</p>
         </div>
       </section>
     </main>
