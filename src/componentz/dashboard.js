@@ -46,13 +46,9 @@ export class Dashboard extends React.Component {
             <TabList>
               <Tab>Challenges</Tab>
               <Tab>Repositories</Tab>
-              <Tab>Commits</Tab>
             </TabList>
             <TabPanel>
               <ChallengesList challenges={this.props.profile} onAcceptFriendChallenge={this.handleAcceptFriendChallenge} onCancelFriendChallenge={this.handleCancelFriendChallenge} />
-            </TabPanel>
-            <TabPanel>
-              <ReposChart repos={this.props.profile} />
             </TabPanel>
             <TabPanel>
               <ReposChart repos={this.props.profile} />
