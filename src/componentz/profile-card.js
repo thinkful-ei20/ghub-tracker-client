@@ -16,18 +16,18 @@ export default ({ profile }) => {
         <div className="bio">
           <p className="alignleft">Email</p>
           {/* <p className="alignright">{profile.email}</p> */}
-          <a className="alignright" href={profile.email}>{profile.email}</a>
+          <a className="alignright" href={profile.email} target='_blank'>{profile.email}</a>
           <div style={{ clear: "both" }} />
           <p className="alignleft">Website</p>
           {/* <p className="alignright">{profile.blog}</p> */}
-          <a className="alignright" href={profile.blog}>{profile.blog}</a>
+          <a className="alignright" href={profile.blog} target='_blank'>{profile.blog}</a>
           <div style={{ clear: "both" }} />
           <p className="alignleft">Location</p>
           <p className="alignright">{profile.location}</p>
           <div style={{ clear: "both" }} />
           <p className="alignleft">GitHub</p>
           {/* <p className="alignright">{profile.html_url}</p> */}
-          <a className="alignright" href={profile.html_url}>{profile.html_url}</a>
+          <a className="alignright" href={profile.html_url} target='_blank'>{profile.html_url}</a>
           <div style={{ clear: "both" }} />
         </div>
       </div>

@@ -1,18 +1,3 @@
-// import React from 'react';
-
-// import './footer.css';
-
-// export default (props) => {
-//   return (
-//     <footer>
-//       <p>Created by HVNJ &copy; 2018</p>
-//     </footer>
-//   );
-// }
-
-
-
-
 import React from 'react';
 import './footer.css';
 
@@ -23,33 +8,33 @@ export default function Footer() {
       {/* <p>Contact Us</p> */}
 			<ul>
 				<li>
-					<a href="https://github.com/jeffreymahmoudi">Jeffrey</a>
+					<a href="https://github.com/jeffreymahmoudi" target='_blank'>Jeffrey</a>
 					<img
-						src='https://cdn.iconscout.com/public/images/icon/free/png-128/github-logo-brand-development-tools-318f14f5797bb6cc-128x128.png'
+            src='https://cdn.iconscout.com/public/images/icon/free/png-128/github-logo-brand-development-tools-318f14f5797bb6cc-128x128.png'
 						alt='Github logo'
 					/>
 				</li>
 
 				<li>
-					<a href="https://github.com/forgiv">Hiram</a>
+					<a href="https://github.com/forgiv" target='_blank'>Hiram</a>
 					<img
-						src='https://cdn.iconscout.com/public/images/icon/free/png-128/github-logo-brand-development-tools-318f14f5797bb6cc-128x128.png'
+            src='https://cdn.iconscout.com/public/images/icon/free/png-128/github-logo-brand-development-tools-318f14f5797bb6cc-128x128.png'
 						alt='Github logo'
 					/>
 				</li>
 
 				<li>
-					<a href="https://github.com/neillsom">Neill</a>
+					<a href="https://github.com/neillsom" target='_blank'>Neill</a>
 					<img
-						src='https://cdn.iconscout.com/public/images/icon/free/png-128/github-logo-brand-development-tools-318f14f5797bb6cc-128x128.png'
+            src='https://cdn.iconscout.com/public/images/icon/free/png-128/github-logo-brand-development-tools-318f14f5797bb6cc-128x128.png'
 						alt='Github logo'
 					/>
 				</li>
 
 				<li>
-					<a href="https://github.com/codeNinja27">Tharaka</a>
+					<a href="https://github.com/codeNinja27" target='_blank'>Tharaka</a>
 					<img
-						src='https://cdn.iconscout.com/public/images/icon/free/png-128/github-logo-brand-development-tools-318f14f5797bb6cc-128x128.png'
+            src='https://cdn.iconscout.com/public/images/icon/free/png-128/github-logo-brand-development-tools-318f14f5797bb6cc-128x128.png'
 						alt='Github logo'
 					/>
 				</li>
