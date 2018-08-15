@@ -13,6 +13,7 @@ import { refreshAuthToken } from '../actions/auth';
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
+import './app.css';
 
 library.add(faUser)
 
