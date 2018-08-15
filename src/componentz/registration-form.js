@@ -30,7 +30,7 @@ export class RegistrationForm extends React.Component {
         <Field component={Input} type="text" name="firstname" placeholder="Enter First Name" />
         <label htmlFor="lastName">Last name</label>
         <Field component={Input} type="text" name="lastname" placeholder="Enter Last Name" />
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username">GitHub Username</label>
         <Field
           component={Input}
           type="text"
