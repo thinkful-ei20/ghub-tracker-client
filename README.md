@@ -3,6 +3,10 @@
 ## Live
 https://commit2win.herokuapp.com
 
+**Demo account for testing:**  
+username: **jeffreymahmoudi**  
+password: **password00**
+
 ## Server Source
 https://github.com/thinkful-ei20/ghub-tracker-server
 
