@@ -7,12 +7,18 @@ export default (props) => {
     return null;
   }
 
-  const chips = props.friends.friends.map(({friend}, index) =>
-    <div className="chip" key={index}>
-      <img src={Avatar} alt="Person" width="96" height="96" />
-      <span>{friend.username}</span>
-      <button value={friend} onClick={() => props.onSendFriendChallenge(friend)}>Challenge</button>
-    </div>
+  const chips = props.friends.friends.map((friend, index) => {
+    if(friend.status === 'accepted') {
+      return (
+        <div className="chip" key={index}>
+        <img src={Avatar} alt="Person" width="96" height="96" />
+        <span>{friend.friend.username}</span>
+        <button value={friend} onClick={() => props.onSendFriendChallenge(friend.friend)}>Challenge</button>
+      </div>
+      );
+    }
+
+    }
   );
 
   return (
