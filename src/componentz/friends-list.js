@@ -1,6 +1,7 @@
 import React from 'react';
 import Avatar from './friends-list.png'
 import './friends-list.css';
+import { Link } from 'react-router-dom';
 
 export default (props) => {
   if (!props.friends) {
@@ -13,7 +14,7 @@ export default (props) => {
         <div className="chip" key={index}>
         <img src={Avatar} alt="Person" width="96" height="96" />
         <span>{friend.friend.username}</span>
-        <button value={friend} onClick={() => props.onSendFriendChallenge(friend.friend)}>Challenge</button>
+        {/* <button value={friend} onClick={() => props.onSendFriendChallenge(friend.friend)}>Challenge</button> */}
       </div>
       );
     }
@@ -25,6 +26,7 @@ export default (props) => {
     <section className="friends">
       <h3>Friends</h3>
       {chips}
+      <Link className="addFriendLink" to="/friends">Add a Friend</Link>
     </section>
   );
 }

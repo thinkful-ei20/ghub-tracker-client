@@ -1,7 +1,6 @@
 import React from 'react';
-// import { Redirect } from 'react-router-dom';
-
 import './friends-page.css';
+import FriendPageForm from './friends-page-form';
 
 export default function FriendsPage() {
   return (
@@ -11,11 +10,13 @@ export default function FriendsPage() {
         <p>Input the github username here to add a friend</p>
         <hr />
 
-        <form className="add-friend-form" onSubmit="">
+        <FriendPageForm />
+
+        {/* <form className="add-friend-form" onSubmit="">
           <label>Github username</label>
           <input type="text" name="" />
-          <button></button>
-        </form>
+          <button>Add</button>
+        </form> */}
 
         </div>
       </main>
