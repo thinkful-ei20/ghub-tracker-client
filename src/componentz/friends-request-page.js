@@ -3,7 +3,7 @@ import Avatar from './friends-list.png'
 import './friends-request-page.css';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { getFriends } from '../actions/users';
+import { getPublicProfile, getFriends, acceptRequest } from '../actions/users';
 import './friends-list.css';
 
 // export default function FriendsRequestPage(props) {
@@ -27,6 +27,14 @@ export class FriendsRequestPage extends React.Component {
     this.props.dispatch(getFriends());
   }
 
+  onEventClick(username) {
+    return this.props.dispatch(getPublicProfile(username))
+      .then(data => {
+        let friendId = data.id;
+        return this.props.dispatch(acceptRequest(friendId));
+      })
+  }
+
   render() {
 
     if (!localStorage.authToken) {
@@ -46,7 +54,7 @@ export class FriendsRequestPage extends React.Component {
           <div className="chip" key={index}>
           <img src={Avatar} alt="Person" width="96" height="96" />
           <span>{friend.friend.username}</span>
-          {/* <button value={friend} onClick={() => props.onSendFriendChallenge(friend.friend)}>Challenge</button> */}
+          <button className="acceptButton" onClick={ () => { this.onEventClick(friend.friend.username)} }>Accept</button>
         </div>
         );
       }
