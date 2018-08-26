@@ -7,7 +7,7 @@ import {
 const initialState = {
   loading: false,
   error: null,
-  data: []
+  friends: []
 }
 
 export default (state = initialState, action) => {
@@ -19,7 +19,7 @@ export default (state = initialState, action) => {
       });
     case GET_FRIENDS_SUCCESS:
       return Object.assign({}, state, {
-        data: action.friends,
+        friends: action.friends,
         loading: false,
         error: null
       });

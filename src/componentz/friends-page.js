@@ -1,8 +1,15 @@
 import React from 'react';
-import './friends-page.css';
 import FriendPageForm from './friends-page-form';
+import { Redirect } from 'react-router-dom';
+import './friends-page.css';
+
 
 export default function FriendsPage() {
+
+  if (!localStorage.authToken) {
+    return <Redirect to="/login" />;
+  }
+
   return (
       <main>
         <div className="friends-page">
@@ -11,12 +18,6 @@ export default function FriendsPage() {
         <hr />
 
         <FriendPageForm />
-
-        {/* <form className="add-friend-form" onSubmit="">
-          <label>Github username</label>
-          <input type="text" name="" />
-          <button>Add</button>
-        </form> */}
 
         </div>
       </main>

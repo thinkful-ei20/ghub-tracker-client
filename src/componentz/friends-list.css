@@ -3,6 +3,7 @@ section.friends {
   max-width: 300px;
   margin: 10px auto;
   padding: 15px;
+  overflow: hidden;
 }
 section.friends .chip {
   display: inline-block;
@@ -52,7 +53,7 @@ section.friends button:hover {
   color: #000;
 }
 
-.addFriendLink {
+.addFriendLink, .friendRequests {
   font-size: 10px;
   text-decoration: none;
   color: #000;
@@ -61,5 +62,18 @@ section.friends button:hover {
   border: 1px solid #000;
   border-radius: 5%;
   padding: 1em;
+  display: inline-block;
+}
+
+.addFriendLink {
+  float: left;
+}
+
+.friendRequests {
+  float: right;
+}
+
+.addFriendLink:hover, .friendRequests:hover {
+  background-color: #72C1A6;
 }
 

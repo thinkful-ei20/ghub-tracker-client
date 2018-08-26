@@ -9,6 +9,7 @@ import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import LoginPage from './login-page';
 import FriendsPage from './friends-page';
+import FriendRequestPage from './friends-request-page';
 import { refreshAuthToken } from '../actions/auth';
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -56,6 +57,7 @@ export class App extends React.Component {
                 <Route exact path="/register" component={RegistrationPage} />
                 <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/friends" component={FriendsPage} />
+                <Route exact path="/requests" component={FriendRequestPage} />
                 <Footer />
             </div>
         );
