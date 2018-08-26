@@ -17,7 +17,10 @@ export class FriendsRequestPage extends React.Component {
     return this.props.dispatch(getPublicProfile(username))
       .then(data => {
         let friendId = data.id;
-        return this.props.dispatch(acceptRequest(friendId));
+        return this.props.dispatch(acceptRequest(friendId))
+        .then(()=>{
+          this.props.dispatch(getFriends());
+        })
       })
   }
 
