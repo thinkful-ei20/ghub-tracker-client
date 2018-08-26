@@ -3,6 +3,8 @@ import { Field, reduxForm, focus } from 'redux-form';
 import Input from './input';
 import { sendFriendRequest, getPublicProfile } from '../actions/users';
 import { required, nonEmpty } from '../validators';
+import './friends-page-form.css';
+
 
 export class FriendForm extends React.Component {
   onSubmit(value) {
@@ -14,23 +16,36 @@ export class FriendForm extends React.Component {
   }
 
   render() {
-    let error;
-    if (this.props.error) {
-      error = (
-        <div className="form-error" aria-live="polite">
-          {this.props.error}
-        </div>
-      );
+
+    let successMessage;
+
+    if (this.props.submitSucceeded) {
+        successMessage = (
+            <div className="message message-success elementToFadeInAndOut">
+                Friend Request Sent
+            </div>
+        );
     }
+
+    let errorMessage;
+    if (this.props.error) {
+        errorMessage = (
+            <div className="message message-error elementToFadeInAndOut">{this.props.error}</div>
+        );
+    }
+
     return (
 
       
       <form 
-        className="add-friend-form" 
+        className="addFriendForm" 
         onSubmit={this.props.handleSubmit(values => 
           this. onSubmit(values)
         )}>
-        {error}
+
+        {successMessage}
+        {errorMessage}
+
         <label htmlFor="usrname">Github username</label>
         <Field
           component={Input}

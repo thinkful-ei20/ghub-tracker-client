@@ -6,3 +6,8 @@
   padding: 25px;
   box-shadow: 5px 10px #888888;
 }
+
+.acceptButton:hover {
+  background-color: #78D2A8;
+  border-radius: 10%;
+}

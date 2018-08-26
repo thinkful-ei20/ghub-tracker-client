@@ -6,20 +6,6 @@ import { Redirect } from 'react-router-dom';
 import { getPublicProfile, getFriends, acceptRequest } from '../actions/users';
 import './friends-list.css';
 
-// export default function FriendsRequestPage(props) {
-//   console.log(props)
-//   return (
-//       <main>
-//         <div className="friends-request-page">
-//         <h2>Friend Requests</h2>
-//         <hr />
-
-//         {/* <FriendRequestPageForm /> */}
-
-//         </div>
-//       </main>
-//     )
-// }
 
 export class FriendsRequestPage extends React.Component {
 

@@ -1,0 +1,17 @@
+.addFriendForm input{
+  padding: 0.5em;
+  margin: 1em 0 1em 0;
+  width: 100%;
+}
+
+.addFriendForm button {
+  padding: 0.5em;
+  border: 1px solid #000;
+  border-radius: 2%;
+  width: 100%;
+}
+
+.addFriendForm button:hover {
+  background-color: #78D2A8;
+  color: #fff;
+}
