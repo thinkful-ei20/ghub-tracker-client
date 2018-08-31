@@ -21,6 +21,8 @@ export class Dashboard extends React.Component {
     }
   }
 
+
+
   handleSendFriendChallenge = ({ id }) => {
     this.props.sendChallengeConnect(id);
   }
@@ -44,12 +46,12 @@ export class Dashboard extends React.Component {
         <div className="main">
           <Tabs>
             <TabList>
-              {/* <Tab>Challenges</Tab> */}
+              <Tab>Challenges</Tab>
               <Tab>Repositories</Tab>
             </TabList>
-            {/* <TabPanel>
+            <TabPanel>
               <ChallengesList challenges={this.props.profile} onAcceptFriendChallenge={this.handleAcceptFriendChallenge} onCancelFriendChallenge={this.handleCancelFriendChallenge} />
-            </TabPanel> */}
+            </TabPanel>
             <TabPanel>
               <ReposChart repos={this.props.profile} />
             </TabPanel>
@@ -73,7 +75,7 @@ const mapDispatchToProps = dispatch => ({
   
   sendChallengeConnect: (recieverId) => dispatch(sendChallenge(recieverId)),
   acceptChallengeConnect: (senderId) => dispatch(acceptChallenge(senderId)),
-  cancelChallengeConnect: (recId) => dispatch(cancelChallenge(recId)),
+  cancelChallengeConnect: (recId) => dispatch(cancelChallenge(recId))
 
 });
 

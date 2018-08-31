@@ -104,3 +104,4 @@ export const cancelChallenge = recievingUser => (dispatch, getState) => {
       dispatch(cancelUserChallengeError(error));
     });
 }
+

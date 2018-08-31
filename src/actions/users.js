@@ -56,6 +56,13 @@ export const getPublicProfile = username => () => {
     .catch(err => err)
 }
 
+export const getPublicProfileGivenId = userId => () => {
+  return fetch(`${API_BASE_URL}/users/profilewithId/${userId}`)
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .catch(err => err)
+}
+
 export const sendFriendRequest = receivingUser => (dispatch, getState) => {
   const authToken = getState().auth.authToken
   return fetch(`${API_BASE_URL}/users/addFriend/${receivingUser}`, {
