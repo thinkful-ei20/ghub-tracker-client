@@ -1,7 +1,9 @@
 import React from 'react';
+import _ from 'lodash';
 import './challenges-list.css';
 import { getPublicProfileGivenId } from '../actions/users';
 import { connect } from 'react-redux';
+
 
 
 export class ChallengeList extends React.Component {
@@ -9,21 +11,28 @@ export class ChallengeList extends React.Component {
     super(props)
 
     this.state = {
-      usernames: []
+      profileArray: []
     }
   }
 
 
   //Check if the next props exist whenever the component updates - depreciated 
   componentWillReceiveProps(nextProps){
-    // console.log(nextProps)
+
     if(nextProps.challenges) {
+
       nextProps.challenges.challenges.map((challenge, index) => {
+ 
         if(challenge.status){
-          // console.log(challenge.receiver)
+  
+          let id = challenge.receiver;
+  
           this.onEvent(challenge.receiver);
+          
         }
       });
+
+      // console.log(this.profileFind(nextProps.challenges.challenges, this.state.profileArray));
     }
   }
 
@@ -59,16 +68,31 @@ export class ChallengeList extends React.Component {
 //   }
 
 
+  // profileFind(ownApiCollection, profileCollection) {
+    // console.log(profileCollection)
+    // let returnCollection = _.uniqBy(ownApiCollection, 'receiver');
+    // console.log(returnCollection);
+    // console.log(ownApiCollection);
+    // returnCollection = ownApiCollection.map((ownData) => {
+    //   console.log(ownData);
+    //   //return _.assign(ownData, _.find(profileCollection, {id: ownData.id}));
+    // });
+    //console.log(returnCollection);
+    //return returnCollection;
+  // }
+
 
 
   onEvent(userId) {
-    // console.log(userId)
+
     this.props.dispatch(getPublicProfileGivenId(userId))
       .then(data => {
-        console.log(data.username)
+
         this.setState(prevState => ({
-          usernames: [...prevState.usernames, data.username]
+          profileArray: [...prevState.profileArray, data]
         }))
+
+
       })
       .catch(error => console.log(error));
   }
@@ -77,13 +101,17 @@ export class ChallengeList extends React.Component {
     if (!this.props.challenges) {
       return null;
     }
-    let count = 0
-  
+
     const rows = this.props.challenges.challenges.map((challenge, index) => {
+
+      let name = "";
+
       if(challenge.status){
-        let name = this.state.usernames[count]
-        // console.log(count, " ", name)
-        count++
+        for(let i=0; i < this.state.profileArray.length; i++) {
+          if(challenge.receiver === this.state.profileArray[i].id) {
+            name = this.state.profileArray[i].username;
+          }
+        }
 
         return(
           <tr key={index}>
@@ -121,57 +149,6 @@ export class ChallengeList extends React.Component {
     );
   }
 }
-
-
-
-
-// export default (props) => {
-//   if (!props.challenges) {
-//     return null;
-//   }
-
-//   // console.log(props.challenges.challenges)
-
-//   const rows = props.challenges.challenges.map((challenge, index) => {
-//     if(challenge.status){
-//       // console.log(challenge)
-//       return(
-//         <tr key={index}>
-//           <td>{challenge.receiver}</td>
-//           <td>100 commits</td>
-//           <td>{challenge.status}</td>
-//           <td>{challenge.sent}</td>
-//           <td>
-//             {challenge.status === "requested" ? <button value={challenge} onClick={() => props.onAcceptFriendChallenge(challenge)}>Accept</button> : ''}
-//             {challenge.status === "pending" ? <button value={challenge} onClick={() => props.onCancelFriendChallenge(challenge)}>Cancel</button> : ''}
-//             {challenge.status === "accepted" ? <button value={challenge} onClick={() => props.onCancelFriendChallenge(challenge)}>Completed</button> : ''}
-//           </td>
-//         </tr>
-//       )
-//     }
-//   });
-
-//   return (
-//     <section className="challenges">
-//       <table>
-//         <thead>
-//           <tr>
-//             <th>Reciever</th>
-//             <th>Challenge</th>
-//             <th>Status</th>
-//             <th>Sent</th>
-//             <th>Actions</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {rows}
-//         </tbody>
-//       </table>
-//     </section>
-//   );
-// }
-
-
 
 
 const mapStateToProps = state => ({
