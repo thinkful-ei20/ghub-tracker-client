@@ -32,7 +32,7 @@ export class Dashboard extends React.Component {
   }
 
   handleCancelFriendChallenge = (challenge) => {
-    console.log(challenge);
+    // console.log(challenge);
     this.props.cancelChallengeConnect(challenge.receiver);
   }  
 

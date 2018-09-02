@@ -40,7 +40,7 @@ export class FriendForm extends React.Component {
       <form 
         className="addFriendForm" 
         onSubmit={this.props.handleSubmit(values => 
-          this. onSubmit(values)
+          this.onSubmit(values)
         )}>
 
         {successMessage}

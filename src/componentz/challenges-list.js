@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+// import _ from 'lodash';
 import './challenges-list.css';
 import { getPublicProfileGivenId } from '../actions/users';
 import { connect } from 'react-redux';
@@ -17,6 +17,7 @@ export class ChallengeList extends React.Component {
 
 
   //Check if the next props exist whenever the component updates - depreciated 
+  
   componentWillReceiveProps(nextProps){
 
     if(nextProps.challenges) {
@@ -24,8 +25,6 @@ export class ChallengeList extends React.Component {
       nextProps.challenges.challenges.map((challenge, index) => {
  
         if(challenge.status){
-  
-          let id = challenge.receiver;
   
           this.onEvent(challenge.receiver);
           
@@ -105,7 +104,7 @@ export class ChallengeList extends React.Component {
     const rows = this.props.challenges.challenges.map((challenge, index) => {
 
       let name = "";
-
+      // console.log(challenge)
       if(challenge.status){
         for(let i=0; i < this.state.profileArray.length; i++) {
           if(challenge.receiver === this.state.profileArray[i].id) {
