@@ -26,8 +26,14 @@ export class ChallengeList extends React.Component {
       nextProps.challenges.challenges.map((challenge, index) => {
  
         if(challenge.status){
+
+          if(challenge.status === 'requested') {
+            this.onEvent(challenge.sender);
+          } else {
+            this.onEvent(challenge.receiver);
+          }
   
-          this.onEvent(challenge.receiver);
+          
           
         }
       });
@@ -35,37 +41,6 @@ export class ChallengeList extends React.Component {
       // console.log(this.profileFind(nextProps.challenges.challenges, this.state.profileArray));
     }
   }
-
-
-//   componentDidUpdate(prevProps, prevState) {
-//     // console.log(prevProps)
-//     if(prevProps.challenges) {
-//       console.log(prevProps)
-//     if (prevState.username !== this.state.username) {
-//         prevProps.challenges.challenges.map((challenge, index) => {
-//         if(challenge.status){
-//           this.onEvent(challenge.receiver);
-//         }
-//       });
-//     }
-//   }
-//   }
-  
-//   static getDerivedStateFromProps(nextProps, prevState){
-//     if(nextProps.username!==prevState.username){
-//       let challenges=prevState.challenges;
-      
-//       challenges.off("value"); //Turn off the connection to previous path.
-      
-// //       We can't do this here as we can't access `this` inside this method.
-// //       firebaseRef=firebase.database().ref(nextProps.path);
-// //       this.setState({firebaseRef, path :nextProps.path });
-// //       this.getData(firebaseRef);
-      
-//       return {username : nextProps.username};
-//     }
-//     else return null;
-//   }
 
 
   // profileFind(ownApiCollection, profileCollection) {
@@ -104,6 +79,14 @@ export class ChallengeList extends React.Component {
   //   }
   // }
 
+
+//2018-09-04T08:19:28.710Z
+
+  timeConverter(timestamp){
+    let time = timestamp.split('T')
+    return time;
+  }
+
   
 
   onEvent(userId) {
@@ -130,10 +113,16 @@ export class ChallengeList extends React.Component {
       // let name = "";
       // console.log(challenge)
       if(challenge.status){
+        let challengeTime = this.timeConverter(challenge.sent);
+        // if(challenge.status === 'requested') {
+        //   name = this.getEachName(challenge.sender)
+        // } else {
+        //   name = this.getEachName(challenge.receiver)
+        // }
         
         // this.getEachName(challenge.receiver);
         // console.log(this.state.sortedNames)
-       let name = this.getEachName(challenge.receiver)
+      //  let name = this.getEachName(challenge.receiver)
         // for(let i=0; i < this.state.profileArray.length; i++) {
         //   if(challenge.receiver === this.state.profileArray[i].id) {
         //     name = this.state.profileArray[i].username;
@@ -144,10 +133,12 @@ export class ChallengeList extends React.Component {
 
         return(
           <tr key={index}>
-            <td>{name}</td>
+            {/* <td>{name}</td> */}
+            <td>{challenge.receiver}</td>
             <td>100 commits</td>
             <td>{challenge.status}</td>
-            <td>{challenge.sent}</td>
+            {/* <td>{challenge.sent}</td> */}
+            <td>{challengeTime[0]}</td>
             <td>
               {challenge.status === "requested" ? <button value={challenge} onClick={() => this.props.onAcceptFriendChallenge(challenge)}>Accept</button> : ''}
               {challenge.status === "pending" ? <button value={challenge} onClick={() => this.props.onCancelFriendChallenge(challenge)}>Cancel</button> : ''}
