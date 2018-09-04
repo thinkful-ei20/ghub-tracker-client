@@ -61,13 +61,58 @@ header a.signup-button:hover {
   float: right;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
+  header a.login-button, header a.signup-button {
+    font-size: 12px;
+    padding: 5px;
+    text-align: center;
+    width: 20%;
+    display: inline-block;
+    /* clear: both; */
+  }
+
+  header a.signup-button {
+    float: right;
+  }
+
+  header a.login-button {
+    float: left;
+  }
+
+
   header a {
     float: none;
-    display: block;
+    /* display: block; */
     text-align: left;
   }
   .header-right {
     float: none;
+  }
+  header {
+    text-align: center;
+  }
+
+  .signout-button {
+    font-size: 10px;
+    float: right;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  header a {
+    float: none;
+    /* display: block; */
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+  header {
+    text-align: center;
+  }
+
+  .signout-button {
+    font-size: 10px;
+    float: right;
   }
 }

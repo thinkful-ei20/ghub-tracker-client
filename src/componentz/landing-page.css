@@ -1,6 +1,6 @@
 section.landing {
-  height: 80vh;
-  margin-bottom: 15%;
+  height: 90vh;
+  margin-bottom: 70%;
 }
 
 section.landing .hero-image {
@@ -42,4 +42,15 @@ section.landing .hero-text a:hover {
 section.landing .description {
   text-align: center;
   padding: 24px;
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+  section.landing .hero-text a {   
+    width: 150px;
+    font-size: 12px; 
+    padding: 6px;
+  }
 }

@@ -19,6 +19,7 @@ export default ({ repos }) => {
       <h3>Commits per Repo</h3>
       <div className="chart-wrapper">
         <PieChart
+          className="pie-chart"
           size={600}
           innerHoleSize={200}
           padding={10}
