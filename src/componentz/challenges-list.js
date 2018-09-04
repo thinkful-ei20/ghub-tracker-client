@@ -11,7 +11,8 @@ export class ChallengeList extends React.Component {
     super(props)
 
     this.state = {
-      profileArray: []
+      profileArray: [],
+      sortedNames:[]
     }
   }
 
@@ -81,6 +82,29 @@ export class ChallengeList extends React.Component {
   // }
 
 
+  getEachName(nameId) {
+    for(let i=0; i < this.state.profileArray.length; i++) {
+      if(nameId === this.state.profileArray[i].id) {
+        return this.state.profileArray[i].username;
+      }
+    }
+  }
+
+  // getEachName(nameId) {
+  //   for(let i=0; i < this.state.profileArray.length; i++) {
+  //     if(nameId === this.state.profileArray[i].id) {
+  //       console.log('match')
+  //       let userName = this.state.profileArray[i].username;
+  //       this.setState((currentState) => ({
+  //         // console.log(currentState)
+  //         // console.log(userName)
+  //         sortedNames: [...currentState.sortedNames, userName]
+  //       }))
+  //     }
+  //   }
+  // }
+
+  
 
   onEvent(userId) {
 
@@ -102,15 +126,21 @@ export class ChallengeList extends React.Component {
     }
 
     const rows = this.props.challenges.challenges.map((challenge, index) => {
-
-      let name = "";
+      // let count = 0;
+      // let name = "";
       // console.log(challenge)
       if(challenge.status){
-        for(let i=0; i < this.state.profileArray.length; i++) {
-          if(challenge.receiver === this.state.profileArray[i].id) {
-            name = this.state.profileArray[i].username;
-          }
-        }
+        
+        // this.getEachName(challenge.receiver);
+        // console.log(this.state.sortedNames)
+       let name = this.getEachName(challenge.receiver)
+        // for(let i=0; i < this.state.profileArray.length; i++) {
+        //   if(challenge.receiver === this.state.profileArray[i].id) {
+        //     name = this.state.profileArray[i].username;
+        //   }
+        // }
+        // let name = this. .sortedNames[count];
+        // count++;
 
         return(
           <tr key={index}>
